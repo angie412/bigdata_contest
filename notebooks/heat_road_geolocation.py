@@ -3,7 +3,7 @@ import requests
 import time
 
 # [1] 설정
-API_KEY = "c8a14fd9426b1babed75b56cc3634f56"
+API_KEY = ""
 HEADERS = {"Authorization": f"KakaoAK {API_KEY}"}
 
 INPUT_CSV = "/Users/hongdaeun/Documents/dev/bigdata_contest/데이터셋/광진구_도로열선_설치현황.csv"
