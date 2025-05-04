@@ -3,7 +3,7 @@ import requests
 import time
 
 # [1] 설정
-KAKAO_API_KEY = "c8a14fd9426b1babed75b56cc3634f56"  # 꼭 본인 키로 바꿔야 해!
+KAKAO_API_KEY = ""  # 꼭 본인 키로 바꿔야 해!
 KAKAO_HEADERS = {"Authorization": f"KakaoAK {KAKAO_API_KEY}"}
 
 INPUT_CSV = "데이터셋/광진구_모래주머니 배치현황.csv"
