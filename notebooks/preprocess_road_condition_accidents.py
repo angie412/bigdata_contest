@@ -25,10 +25,10 @@ ice_accidents = accident_values[ice_columns].sum()
 ice_ratio = round(ice_accidents / total_accidents, 4) if total_accidents > 0 else 0
 
 # [6] 결과 출력
-print("📊 노면 상태 기반 사고 통계:")
-print(f"- 전체 사고 건수: {total_accidents:,}건")
-print(f"- 결빙 관련 사고: {ice_accidents:,}건")
-print(f"- ❄️ 결빙 사고 비율: {ice_ratio:.2%}")
+print(" 노면 상태 기반 사고 통계:")
+print(f"전체 사고 건수: {total_accidents:,}건")
+print(f"결빙 관련 사고: {ice_accidents:,}건")
+print(f"결빙 사고 비율: {ice_ratio:.2%}")
 
 # [7] 도로 데이터와 병합
 road_df = pd.read_csv("광진구_도로_기상_기상상태사고_통합.csv")
