@@ -30,6 +30,29 @@ All data were filtered to include only roads within the **Gwangjin-gu** area.
 - Merged road data with accident and weather information
 - Filtered and cleaned data to remove inconsistencies
 
+### 📌 Feature Engineering Summary
+
+The following features were engineered by aggregating and combining data from various sources:
+
+| Feature Name                      | Processing Summary                                                                 |
+|----------------------------------|------------------------------------------------------------------------------------|
+| `latitude`, `longitude`          | Extracted from road center points using shapefiles and filtered by Gwangjin-gu    |
+| `slope_percent`                  | Calculated using elevation difference (DEM) and road geometry                     |
+| `has_heat_cable`                 | Merged with heat cable installation data (manual geocoding of endpoints)          |
+| `has_salt_box` / `has_sand_bag`  | Extracted from municipal infrastructure lists, matched by proximity (≤50m)        |
+| `has_calcium_chloride`           | Location data cleaned and mapped with address geocoding                           |
+| `avg_temp`, `avg_rainfall`, `avg_snowfall` | Aggregated daily weather data from winter months (Nov–Feb) over 5 years  |
+| `early_morning_snow_peak_rate`   | Ratio of early morning snowfall to daily average                                  |
+| `snow_accident_ratio`            | Calculated from accident reports labeled as snow-related                          |
+| `winter_accident_count`          | Counted from filtered time-period accidents in winter                             |
+| `seriousness_score`              | Scored using injury severity levels in accident records                           |
+| `icy_surface_accident_ratio`     | Filtered accidents with icy road conditions from report codes                     |
+| `early_morning_accident_ratio`   | Ratio of 4–7 AM accidents to total accidents per road                             |
+| `commute_peak_accident_ratio`    | Ratio of rush hour accidents (7–9 AM, 5–7 PM)                                      |
+| `nighttime_accident_ratio`       | Ratio of 10 PM–4 AM accidents                                                     |
+| `ice_related_severity_score`     | Weighted score combining icy condition and severity levels                        |
+
+
 ## 🤖 Model Development
 
 We used a classification model to predict the probability of icing incidents on each road segment.  
