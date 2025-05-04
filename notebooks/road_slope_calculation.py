@@ -7,7 +7,7 @@ import urllib.parse
 # [1] 설정
 TXT_PATH = r"C:\Users\82102\OneDrive\바탕 화면\데이터셋\서울_도로명주소_전체.txt"  # 수정해줘
 SAVE_PATH = r"C:\Users\82102\OneDrive\바탕 화면\데이터셋\gwangjin_result.csv"  # 수정해줘
-API_KEY = "c8a14fd9426b1babed75b56cc3634f56"  # 카카오 REST API 키
+API_KEY = ""  # 카카오 REST API 키
 HEADERS = {"Authorization": f"KakaoAK {API_KEY}",
            "User-Agent": "Mozilla/5.0"}
 
@@ -62,7 +62,7 @@ def get_coordinates(address):
         else:
             return None, None
     except requests.exceptions.RequestException as e:
-        print(f"⚠️ 주소 실패: {address} | 에러: {e}")
+        print(f"주소 실패: {address} | 에러: {e}")
         return None, None
 
 
